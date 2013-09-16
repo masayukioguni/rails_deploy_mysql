@@ -15,21 +15,6 @@ GC.respond_to?(:copy_on_write_friendly=) and
   GC.copy_on_write_friendly = true
 check_client_connection false
 
-
-
-require 'syslog'
-Syslog.open("syslogtest")
-Syslog.log(Syslog::LOG_WARNING, "devlop.rb ")
-Syslog.close
-
-ENV.each {|k,v|
-  p "ENV param #{k}=#{v}"
-  Syslog.open("syslogtest")
-  Syslog.log(Syslog::LOG_WARNING, "ENV param %s=%s", k,v)
-  Syslog.close
-}
-
-
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.connection.disconnect!
