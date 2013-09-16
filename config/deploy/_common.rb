@@ -22,14 +22,14 @@ namespace :deploy do
     path = "#{current_path}/tmp/pids/unicorn.pid"
     run "cat #{path}"
 
-    if File.exist? "#{current_path}/tmp/pids/unicorn.pid"
-      run "kill -s USR2 `cat #{current_path}/tmp/unicorn_#{application}.pid`"
-    else 
-      run "echo not found"
-    end
+    #if File.exist? "#{current_path}/tmp/pids/unicorn.pid"
+    #  run "kill -s USR2 `cat #{current_path}/tmp/unicorn_#{application}.pid`"
+    #else 
+    #  run "echo not found"
+    #end
   end
   task :stop, :roles => :app do
-    run "kill -s QUIT `cat t#{current_path}/tmp/unicorn.pid`"
+    run "kill -s QUIT `cat #{current_path}/tmp/pids/unicorn.pid`"
   end
 end
 =begin
