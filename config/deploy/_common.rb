@@ -18,9 +18,9 @@ namespace :deploy do
     run "cd #{current_path}; bundle exec unicorn_rails -c config/unicorn.rb -E #{rails_env} -D"
   end
   task :restart, :roles => :app do
-    run "echo #{current_path}/tmp/pids/unicorn.pid"
-    path = "#{current_path}/tmp/pids/unicorn.pid"
-    run "cat #{path}"
+    #run "echo #{current_path}/tmp/pids/unicorn.pid"
+    #path = "#{current_path}/tmp/pids/unicorn.pid"
+    #run "cat #{path}"
 
     #if File.exist? "#{current_path}/tmp/pids/unicorn.pid"
     #  run "kill -s USR2 `cat #{current_path}/tmp/unicorn_#{application}.pid`"

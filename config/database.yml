@@ -14,7 +14,7 @@ development:
   database: rails_deploy_mysql_development
   pool: 5
   username: root
-  password: ddddddd
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
