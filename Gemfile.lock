@@ -226,6 +226,7 @@ DEPENDENCIES
   capistrano-unicorn
   capistrano_colors
   coffee-rails (~> 4.0.0)
+  execjs
   factory_girl_rails
   faker
   growl
