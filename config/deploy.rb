@@ -22,4 +22,3 @@ role :web, host
 role :app, host
 role :db,  host, :primary => true
 
-default_environment['MYSQL_PASSWORD'] = ENV['RAILS_TEST_PASSWORD']
