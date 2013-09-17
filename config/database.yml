@@ -34,6 +34,6 @@ production:
   encoding: utf8
   database: rails_deploy_mysql
   pool: 5
-  username: admin
-  password: admin
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
