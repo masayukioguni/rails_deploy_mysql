@@ -20,15 +20,11 @@ deploy_hosts.each do |host|
 end
 
 p ENV.select { |k,v| k =~ /^RAILS_/ }
+p deploy_hosts.first
 
 set :host, deploy_hosts.first
 role :db, host, :primary => true
 
 set :default_environment, ENV.select { |k,v| k =~ /^RAILS_/ }
-=begin
-set :default_environment, {
-	'MYSQL_PASSWORD' => ENV['RAILS_TEST_PASSWORD'],
-	'MYSQL_USERNAME' => ENV['RAILS_TEST_USERNAME'],
-	'MYSQL_DB_NAME' => ENV['RAILS_TEST_DB_NAME']
-}
-=end
+
+
