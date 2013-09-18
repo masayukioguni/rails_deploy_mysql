@@ -21,6 +21,9 @@ end
 
 p ENV.select { |k,v| k =~ /^RAILS_/ }
 
+set :host, deploy_hosts.first
+role :db, host, :primary => true
+
 set :default_environment, ENV.select { |k,v| k =~ /^RAILS_/ }
 =begin
 set :default_environment, {
