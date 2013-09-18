@@ -16,14 +16,6 @@ Syslog.open("syslogtest")
 Syslog.log(Syslog::LOG_WARNING, "unicorn.rb ")
 Syslog.close
 
-ENV.each {|k,v|
-  
-  p "ENV param #{k}=#{v}"
-  Syslog.open("syslogtest")
-  Syslog.log(Syslog::LOG_WARNING, "ENV param %s=%s", k,v)
-  Syslog.close
-}
-
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) and
 GC.copy_on_write_friendly = true

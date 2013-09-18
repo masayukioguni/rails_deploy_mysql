@@ -7,7 +7,7 @@ set :unicorn_config, "#{current_path}/config/unicorn/#{stage}.rb"
 set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
 
 before 'deploy:setup', 'rvm:install_ruby'
-after 'deploy:restart', :oguni#,'unicorn:restart'
+after 'deploy:restart', :oguni,'unicorn:restart'
 
 task :oguni do
   run "logger oguni task start"
